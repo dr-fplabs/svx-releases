@@ -54,10 +54,19 @@ confirms the new version started. `./upgrade.sh --rollback` reverts.
 
 ## Licensing
 
-Every install starts a **free 30-day trial** of the full product on first
-run. No sign-up or key is needed. To keep using it, buy an annual licence key
-from DDR Computing Ltd at info@ddrcomputing.co.uk and copy it to
-`config/license.key`. The key is checked offline on your server.
+SVX is **free for one F5 device and up to ten virtual servers** — no key or
+sign-up needed, every feature included. Beyond that you need a licence key:
+
+| Edition | Devices | Virtual servers | Term |
+|---|---|---|---|
+| Free (no key) | 1 | 10 | No time limit |
+| Trial | Unlimited | Unlimited | 30 days |
+| 1-year | Unlimited | Unlimited | 1 year |
+| 5-year | Unlimited | Unlimited | 5 years |
+
+Keys come from DDR Computing Ltd at info@ddrcomputing.co.uk. Copy the key to
+`config/license.key`; it is checked offline on your server. When a key expires
+SVX carries on as the Free edition — nothing is locked out.
 
 F5 and BIG-IP are trademarks of F5, Inc. SVX is not affiliated with or
 endorsed by F5, Inc.
