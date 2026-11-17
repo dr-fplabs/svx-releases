@@ -28,7 +28,7 @@ Copy the bundle to the server, then:
 
 ```bash
 tar xzf svx-docker.tar.gz        # or svx-native.tar.gz
-cd fp-f5-ss-*/
+cd svx-*/          # svx-<version>/ or svx-<version>-native/
 ./install.sh
 ```
 
@@ -37,7 +37,8 @@ creates the first admin account, and generates a TLS certificate. SVX then
 runs on `https://<your-server>` (port 443) with Docker, or
 `https://<your-server>:5000` natively — `./install.sh --port=N` picks another. The certificate is self-signed at
 first, so expect a browser warning; put your own certificate in `certs/` to
-replace it. `INSTALL.md` inside the bundle has the full guide.
+replace it. Each bundle has a `README.md` to start from and an `INSTALL.md` with the
+full guide.
 
 The bundle is self-contained: the server needs no internet access, git,
 PyPI or Docker Hub.
