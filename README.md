@@ -34,7 +34,8 @@ cd fp-f5-ss-*/
 
 The installer asks for your BIG-IP management address and service account,
 creates the first admin account, and generates a TLS certificate. SVX then
-runs on `https://<your-server>:5000`. The certificate is self-signed at
+runs on `https://<your-server>` (port 443) with Docker, or
+`https://<your-server>:5000` natively — `./install.sh --port=N` picks another. The certificate is self-signed at
 first, so expect a browser warning; put your own certificate in `certs/` to
 replace it. `INSTALL.md` inside the bundle has the full guide.
 
