@@ -1,2 +1,65 @@
-# svx-releases
-SVX release downloads (self-service portal for F5 BIG-IP)
+# SVX downloads
+
+Official release downloads for **SVX (Standard Virtual X)**, a self-service
+portal for F5 BIG-IP. Application teams request standard virtual servers;
+network administrators review, approve and push them. This repository holds
+release files only; the source code is not published here.
+
+## Download
+
+Pick the bundle that suits your host:
+
+- **[Docker bundle](https://github.com/dr-fplabs/svx-releases/releases/latest/download/svx-docker.tar.gz)**
+  (`svx-docker.tar.gz`). Recommended. Needs Linux with Docker and Docker Compose.
+- **[Native bundle](https://github.com/dr-fplabs/svx-releases/releases/latest/download/svx-native.tar.gz)**
+  (`svx-native.tar.gz`). For hosts that can't run containers, such as
+  unprivileged LXCs. Needs Linux x86_64 with Python 3.12.
+
+Older versions are under [Releases](https://github.com/dr-fplabs/svx-releases/releases).
+Each release lists a SHA-256 checksum for every file:
+
+```bash
+sha256sum -c SHA256SUMS --ignore-missing
+```
+
+## Install
+
+Copy the bundle to the server, then:
+
+```bash
+tar xzf svx-docker.tar.gz        # or svx-native.tar.gz
+cd fp-f5-ss-*/
+./install.sh
+```
+
+The installer asks for your BIG-IP management address and service account,
+creates the first admin account, and generates a TLS certificate. SVX then
+runs on `https://<your-server>:5000`. The certificate is self-signed at
+first, so expect a browser warning; put your own certificate in `certs/` to
+replace it. `INSTALL.md` inside the bundle has the full guide.
+
+The bundle is self-contained: the server needs no internet access, git,
+PyPI or Docker Hub.
+
+## Upgrade
+
+Download the new bundle and run this from your existing install folder:
+
+```bash
+./upgrade.sh --bundle /path/to/svx-docker.tar.gz
+```
+
+It verifies the bundle, snapshots your data, keeps a rollback image, and
+confirms the new version started. `./upgrade.sh --rollback` reverts.
+
+## Licensing
+
+Every install starts a **free 30-day trial** of the full product on first
+run. No sign-up or key is needed. To keep using it, buy an annual licence key
+from DDR Computing Ltd at info@ddrcomputing.co.uk and copy it to
+`config/license.key`. The key is checked offline on your server.
+
+F5 and BIG-IP are trademarks of F5, Inc. SVX is not affiliated with or
+endorsed by F5, Inc.
+
+© DDR Computing Ltd. All rights reserved.
