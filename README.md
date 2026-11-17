@@ -57,12 +57,15 @@ confirms the new version started. `./upgrade.sh --rollback` reverts.
 SVX is **free for one F5 device and up to ten virtual servers** — no key or
 sign-up needed, every feature included. Beyond that you need a licence key:
 
-| Edition | Devices | Virtual servers | Term |
-|---|---|---|---|
-| Free (no key) | 1 | 10 | No time limit |
-| Trial | Unlimited | Unlimited | 30 days |
-| 1-year | Unlimited | Unlimited | 1 year |
-| 5-year | Unlimited | Unlimited | 5 years |
+| Edition | Devices | Virtual servers | Term | Price |
+|---|---|---|---|---|
+| Free (no key) | 1 | 10 | No time limit | Free |
+| Trial | Unlimited | Unlimited | 30 days | Free |
+| 1-year | Unlimited | Unlimited | 1 year | £120 |
+| 5-year | Unlimited | Unlimited | 5 years | £500 |
+
+Prices are per portal installation. Major upgrades and new features may be
+charged separately.
 
 Keys come from DDR Computing Ltd at info@ddrcomputing.co.uk. Copy the key to
 `config/license.key`; it is checked offline on your server. When a key expires
