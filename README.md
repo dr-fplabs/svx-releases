@@ -48,11 +48,20 @@ PyPI or Docker Hub.
 Download the new bundle and run this from your existing install folder:
 
 ```bash
-./upgrade.sh --bundle /path/to/svx-docker.tar.gz
+./upgrade.sh --bundle /path/to/svx-docker.tar.gz     # Docker
+./upgrade.sh --bundle /path/to/svx-native.tar.gz     # native (no Docker)
 ```
 
-It verifies the bundle, snapshots your data, keeps a rollback image, and
-confirms the new version started. `./upgrade.sh --rollback` reverts.
+It verifies the bundle, snapshots your data, keeps the previous version for
+rollback, and confirms the new version started. `./upgrade.sh --rollback`
+reverts.
+
+**Upgrading from a version older than 1.49.0?** Take `upgrade.sh` from the new
+bundle first (Docker or native, whichever you downloaded):
+
+```bash
+tar xzf /path/to/svx-docker.tar.gz --strip-components=1 --wildcards '*/upgrade.sh'
+```
 
 ## Licensing
 
